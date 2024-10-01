@@ -118,4 +118,4 @@ for customer_id, customer_name in customers:
 df = pd.DataFrame(data)
 
 # Save the DataFrame to a CSV file
-df.to_csv('data8.csv', index=False)
+df.to_csv('data.csv', index=False)

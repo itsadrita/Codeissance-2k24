@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimplePay - Secure Payment Gateway</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1a73e8;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #155db1;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .card-info {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-info input {
+            width: 48%;
+        }
+
+        .secure-badge {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .secure-badge i {
+            color: #28a745;
+            margin-right: 5px;
+        }
+
+        #transactionHistory {
+            margin-top: 40px;
+        }
+
+        #transactionHistory h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        #transactionHistory ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #transactionHistory li {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>SimplePay</h1>
+
+        <div class="card">
+            <h2>Secure Payment</h2>
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label for="paymentMethod">Payment Method</label>
+                    <select id="paymentMethod" required>
+                        <option value="card">Card Payment</option>
+                        <option value="contact">Contact Payment</option>
+                        <option value="neft">NEFT</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="customerId">Customer ID</label>
+                    <input type="text" id="customerId" required>
+                </div>
+                <div class="form-group">
+                    <label for="receiverId">Receiver ID</label>
+                    <input type="text" id="receiverId" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount (₹)</label>
+                    <input type="number" id="amount" required>
+                </div>
+                <div class="form-group">
+                    <label for="originCountry">Country of Origin</label>
+                    <input type="text" id="originCountry" required>
+                </div>
+                <div class="form-group">
+                    <label for="destinationCountry">Country of Destination</label>
+                    <input type="text" id="destinationCountry" required>
+                </div>
+                <div id="cardPaymentFields">
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+                    </div>
+                    <div class="card-info">
+                        <div class="form-group">
+                            <label for="expiryDate">Expiry Date</label>
+                            <input type="text" id="expiryDate" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" placeholder="123">
+                        </div>
+                    </div>
+                </div>
+                <div id="contactPaymentFields" style="display: none;">
+                    <div class="form-group">
+                        <label for="contactNumber">Contact Number</label>
+                        <input type="tel" id="contactNumber" placeholder="Enter contact number" pattern="[0-9]{10}">
+                    </div>
+                </div>
+                <div id="neftPaymentFields" style="display: none;">
+                    <div class="form-group">
+                        <label for="accountNumber">Account Number</label>
+                        <input type="text" id="accountNumber" placeholder="Enter account number">
+                    </div>
+                    <div class="form-group">
+                        <label for="ifscCode">IFSC Code</label>
+                        <input type="text" id="ifscCode" placeholder="Enter IFSC code">
+                    </div>
+                </div>
+                <button type="submit" class="button">Pay Securely</button>
+            </form>
+            <div class="secure-badge">
+                <i class="fas fa-lock"></i> Your payment is secure and encrypted
+            </div>
+
+            <button onclick="window.location.href='user-transaction.html'" class="button" style="margin-top: 20px;">View
+                Transaction History</button>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDGeLTtWwtmbAhZ-hIKPvKLrYHH58WuAcA",
+            authDomain: "tsec-1e5ee.firebaseapp.com",
+            projectId: "tsec-1e5ee",
+            storageBucket: "tsec-1e5ee.appspot.com",
+            messagingSenderId: "1043669170039",
+            appId: "1:1043669170039:web:b9c6e5703ae9c536e65372",
+            measurementId: "G-3WCZCLW3LY"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Initialize Firestore
+        const db = firebase.firestore();
+
+        const paymentMethodSelect = document.getElementById('paymentMethod');
+        const cardPaymentFields = document.getElementById('cardPaymentFields');
+        const contactPaymentFields = document.getElementById('contactPaymentFields');
+        const neftPaymentFields = document.getElementById('neftPaymentFields');
+        const paymentForm = document.getElementById('paymentForm');
+        const customerIdInput = document.getElementById('customerId');
+
+        // Function to generate a random customer ID
+        function generateCustomerId() {
+            return 'CUST-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+        }
+
+        // Check if customer ID exists in local storage, if not, generate a new one
+        let customerId = localStorage.getItem('customerId');
+        if (!customerId) {
+            customerId = generateCustomerId();
+            localStorage.setItem('customerId', customerId);
+        }
+
+        // Set the customer ID in the input field and make it read-only
+        customerIdInput.value = customerId;
+        customerIdInput.readOnly = true;
+
+        paymentMethodSelect.addEventListener('change', function () {
+            const selectedMethod = this.value;
+            cardPaymentFields.style.display = selectedMethod === 'card' ? 'block' : 'none';
+            contactPaymentFields.style.display = selectedMethod === 'contact' ? 'block' : 'none';
+            neftPaymentFields.style.display = selectedMethod === 'neft' ? 'block' : 'none';
+        });
+
+        // Function to generate a transaction ID
+        function generateTransactionId() {
+            return 'TXN-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+        }
+
+        // Payment form submit event listener
+        paymentForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            // Fetch location first
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(async function (position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+
+                    const customerId = document.getElementById('customerId').value;
+                    const amount = parseFloat(document.getElementById('amount').value);
+                    const transactionId = generateTransactionId();
+
+                    // Fetch user document from Firestore
+                    const userDocRef = db.collection('users').doc(customerId);
+                    const userDoc = await userDocRef.get();
+
+                    let userData = {};
+                    if (userDoc.exists) {
+                        userData = userDoc.data();
+                    } else {
+                        // Create new user document if not exists
+                        await userDocRef.set({
+                            blocked: false,
+                            highAmountTransferCount: 0,
+                            lastLargeTransactionTimestamp: null
+                        });
+                        userData = {
+                            blocked: false,
+                            highAmountTransferCount: 0,
+                            lastLargeTransactionTimestamp: null
+                        };
+                    }
+
+                    if (userData.blocked) {
+                        alert('Your account is currently blocked due to high-value transactions.');
+                        return;
+                    }
+
+                    // Check if amount is above ₹40,000 and within 10 minutes
+                    const now = new Date();
+                    const TEN_MINUTES_IN_MS = 10 * 60 * 1000;
+
+                    if (amount > 40000) {
+                        const lastTransactionTimestamp = userData.lastLargeTransactionTimestamp
+                            ? userData.lastLargeTransactionTimestamp.toDate() : null;
+
+                        if (lastTransactionTimestamp && now - lastTransactionTimestamp < TEN_MINUTES_IN_MS) {
+                            userData.highAmountTransferCount += 1;
+                        } else {
+                            userData.highAmountTransferCount = 1; // Reset count if outside 10 minutes window
+                        }
+
+                        userData.lastLargeTransactionTimestamp = firebase.firestore.Timestamp.fromDate(now);
+
+                        if (userData.highAmountTransferCount >= 3) {
+                            await userDocRef.update({
+                                blocked: true,
+                                highAmountTransferCount: userData.highAmountTransferCount,
+                                lastLargeTransactionTimestamp: userData.lastLargeTransactionTimestamp
+                            });
+                            alert('You have been blocked due to high-value transactions in a short period.');
+                            return;
+                        }
+
+                        await userDocRef.update({
+                            highAmountTransferCount: userData.highAmountTransferCount,
+                            lastLargeTransactionTimestamp: userData.lastLargeTransactionTimestamp
+                        });
+                    }
+
+                    const paymentMethod = paymentMethodSelect.value;
+                    let paymentData = {
+                        transactionId: transactionId,
+                        type: paymentMethod === 'card' ? 'Card Payment' : paymentMethod === 'contact' ? 'Contact Payment' : 'NEFT',
+                        customerId,
+                        receiverId: document.getElementById('receiverId').value,
+                        amount,
+                        originCountry: document.getElementById('originCountry').value,
+                        destinationCountry: document.getElementById('destinationCountry').value,
+                        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                        location: {
+                            latitude: latitude,
+                            longitude: longitude
+                        }
+                    };
+
+                    if (paymentMethod === 'card') {
+                        paymentData.cardNumber = document.getElementById('cardNumber').value;
+                        paymentData.expiryDate = document.getElementById('expiryDate').value;
+                        paymentData.cvv = document.getElementById('cvv').value;
+                    } else if (paymentMethod === 'contact') {
+                        paymentData.contactNumber = document.getElementById('contactNumber').value;
+                    } else if (paymentMethod === 'neft') {
+                        paymentData.accountNumber = document.getElementById('accountNumber').value;
+                        paymentData.ifscCode = document.getElementById('ifscCode').value;
+                    }
+
+                    try {
+                        await processPayment();
+                        // Payment successful, store in Firestore
+                        await db.collection("payments").doc(transactionId).set(paymentData);
+                        console.log("Payment document written with ID: ", transactionId);
+                        alert(`Payment processed and stored successfully!\nTransaction ID: ${transactionId}`);
+                        paymentForm.reset();
+                        // Reset the customer ID field after form reset
+                        customerIdInput.value = customerId;
+                    } catch (error) {
+                        console.error("Error processing payment: ", error);
+                        alert('Error processing payment. The transaction was not stored. Please try again.');
+                    }
+                }, function (error) {
+                    console.error("Error getting location: ", error);
+                    alert("Unable to fetch location. Please try again.");
+                });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        });
+
+        async function processPayment() {
+            // This function should handle actual payment processing logic.
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve();
+                }, 1000);
+            });
+        }
+    </script>
+</body>
+
+</html>

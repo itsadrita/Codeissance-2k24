@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <!-- CDN Links for Chart.js, Moment.js, Firebase -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0/dist/chartjs-adapter-moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dashboard-section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            grid-column: 1 / -1;
+            color: #1a73e8;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #155db1;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
+        }
+
+        .transaction-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Dashboard Layout -->
+    <div class="dashboard-container">
+        <h1>Admin Dashboard</h1>
+        
+        <!-- Risk Analysis Section -->
+        <div class="dashboard-section">
+            <h2>Risk Analysis of the Day</h2>
+            <div class="chart-container">
+                <canvas id="riskAnalysisChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Suspicious Transactions Section -->
+        <div class="dashboard-section">
+            <h2>Suspicious Transactions</h2>
+            <div class="chart-container">
+                <canvas id="suspiciousTransactionChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Monthly Transaction Summary Section -->
+        <div class="dashboard-section">
+            <h2>Monthly Transaction Summary</h2>
+            <div class="chart-container">
+                <canvas id="monthlyTransactionChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Go to Transactions Button -->
+    <button class="transaction-button" onclick="window.location.href='admin-transaction.html'">Go to Transactions</button>
+
+    <!-- Scripts -->
+    <script>
+        // Firebase Configuration and Initialization
+        const firebaseConfig = {
+            apiKey: "AIzaSyDGeLTtWwtmbAhZ-hIKPvKLrYHH58WuAcA",
+            authDomain: "tsec-1e5ee.firebaseapp.com",
+            projectId: "tsec-1e5ee",
+            storageBucket: "tsec-1e5ee.appspot.com",
+            messagingSenderId: "1043669170039",
+            appId: "1:1043669170039:web:b9c6e5703ae9c536e65372",
+            measurementId: "G-3WCZCLW3LY"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Chart Configurations
+        function createSuspiciousTransactionsChart() {
+            const ctx = document.getElementById('suspiciousTransactionChart').getContext('2d');
+            const data = [
+                { x: '2023-06-01', y: 25 },
+                { x: '2023-06-05', y: 40 },
+                { x: '2023-06-10', y: 30 },
+                { x: '2023-06-15', y: 55 },
+                { x: '2023-06-20', y: 45 },
+                { x: '2023-06-25', y: 60 },
+                { x: '2023-06-30', y: 35 }
+            ];
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Suspicious Transactions',
+                        data: data,
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { type: 'time', time: { unit: 'day' }, title: { display: true, text: 'Date' } },
+                        y: { beginAtZero: true, title: { display: true, text: 'Number of Suspicious Transactions' } }
+                    },
+                    plugins: {
+                        title: { display: true, text: 'Suspicious Transactions Over Time' }
+                    }
+                }
+            });
+        }
+
+        function createRiskAnalysisChart() {
+            const ctx = document.getElementById('riskAnalysisChart').getContext('2d');
+            const data = [60, 28, 12]; // Low, Medium, High risk
+
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Low', 'Medium', 'High'],
+                    datasets: [{
+                        data: data,
+                        backgroundColor: ['#34a853', '#fbbc05', '#ea4335']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: { display: true, text: 'Risk Analysis of Transactions' },
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+        }
+
+        // Fetch and Parse CSV Data for Monthly Transaction Summary
+        function fetchCSVAndCreateChart() {
+            fetch('datasets.csv')
+                .then(response => response.text())
+                .then(data => createMonthlyTransactionChart(data))
+                .catch(error => console.error('Error loading CSV:', error));
+        }
+
+        function createMonthlyTransactionChart(content) {
+            const rows = content.split('\n');
+            const headers = rows[0].split(',');
+            const dateIndex = headers.indexOf('Date');
+            const amountIndex = headers.indexOf('Transaction Amount');
+
+            const monthlyTotals = new Array(12).fill(0);
+            const monthlyTransactions = new Array(12).fill(0);
+
+            rows.slice(1).forEach(row => {
+                const cells = row.split(',');
+                const date = new Date(cells[dateIndex]);
+                const amount = parseFloat(cells[amountIndex]);
+
+                if (!isNaN(date.getTime()) && !isNaN(amount)) {
+                    const month = date.getMonth();
+                    monthlyTotals[month] += amount;
+                    monthlyTransactions[month]++;
+                }
+            });
+
+            const ctx = document.getElementById('monthlyTransactionChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'Number of Transactions',
+                        data: monthlyTransactions,
+                        backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, title: { display: true, text: 'Number of Transactions' } },
+                        x: { title: { display: true, text: 'Month' } }
+                    },
+                    plugins: {
+                        title: { display: true, text: 'Monthly Transaction Summary' },
+                        tooltip: {
+                            callbacks: {
+                                label: (context) => {
+                                    const label = context.dataset.label || '';
+                                    const value = context.parsed.y;
+                                    const total = monthlyTotals[context.dataIndex].toFixed(2);
+                                    return `${label}: ${value} (Total: $${total})`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Window Load Event Listeners
+        window.addEventListener('load', () => {
+            if (firebase.apps.length) {
+                createSuspiciousTransactionsChart();
+                createRiskAnalysisChart();
+                fetchCSVAndCreateChart();
+            } else {
+                console.error('Firebase not initialized');
+            }
+        });
+    </script>
+</body>
+
+</html>

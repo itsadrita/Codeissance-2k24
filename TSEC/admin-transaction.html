@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimplePay Admin - All Transactions</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+        }
+
+        h1 {
+            color: #1a73e8;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            color: #1a73e8;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .transaction-id {
+            color: #1a73e8;
+            cursor: pointer;
+        }
+
+        .transaction-amount {
+            font-weight: bold;
+            color: #dc3545;
+        }
+
+        .button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #155db1;
+        }
+        /* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-height: 80vh; /* Restrict the modal height to 80% of the viewport height */
+    overflow-y: auto; /* Enables vertical scrolling if content overflows */
+}
+
+.scrollable-content {
+    max-height: 70vh; /* Set the max height of the content inside the modal */
+    overflow-y: auto; /* Enables vertical scrolling within the modal content */
+    padding-right: 15px; /* Space for scrollbar */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    cursor: pointer;
+}
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>All Transactions</h1>
+        <div class="card">
+            <table id="transactionTable">
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Type</th>
+                        <th>Date</th>
+                        <th>Receiver</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Amount</th>
+                        <th>Customer ID</th>
+                        <th>Risk Analysis</th>
+                        <th>Suspicious Activity</th>
+                        <th>Flag</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionList">
+                    <!-- Transactions will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+        <a href="admin-dashboard.html" class="button">Back to Admin Dashboard</a>
+    </div>
+
+    <!-- Modal for AML Report -->
+    <div id="amlModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>AML Report</h2>
+            <div id="amlReportContent">
+                <p>Loading report...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDGeLTtWwtmbAhZ-hIKPvKLrYHH58WuAcA",
+            authDomain: "tsec-1e5ee.firebaseapp.com",
+            projectId: "tsec-1e5ee",
+            storageBucket: "tsec-1e5ee.appspot.com",
+            messagingSenderId: "1043669170039",
+            appId: "1:1043669170039:web:b9c6e5703ae9c536e65372",
+            measurementId: "G-3WCZCLW3LY"
+        };
+
+        // Initialize Firebase and Firestore
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        const customerHighValueTransactionCount = {};
+
+        // Fetch and display all transactions
+        function fetchAllTransactions() {
+            const transactionList = document.getElementById('transactionList');
+
+            db.collection("payments")
+                .orderBy("timestamp", "desc")
+                .onSnapshot((querySnapshot) => {
+                    transactionList.innerHTML = '';
+
+                    if (querySnapshot.empty) {
+                        transactionList.innerHTML = '<tr><td colspan="11">No transactions found.</td></tr>';
+                    } else {
+                        querySnapshot.forEach((doc) => {
+                            const transaction = doc.data();
+                            const customerId = transaction.customerId || 'N/A';
+                            const amount = transaction.amount || 0;
+                            let riskAnalysis = 'Low';
+                            let suspiciousActivity = 'No';
+                            let flag = transaction.flag || false;
+
+                            // Track high-value transactions for risk analysis
+                            if (!customerHighValueTransactionCount[customerId]) {
+                                customerHighValueTransactionCount[customerId] = 0;
+                            }
+
+                            if (amount >= 50000) {
+                                customerHighValueTransactionCount[customerId]++;
+
+                                if (customerHighValueTransactionCount[customerId] === 1) {
+                                    riskAnalysis = 'Medium';
+                                    suspiciousActivity = 'Yes';
+                                } else if (customerHighValueTransactionCount[customerId] >= 2) {
+                                    riskAnalysis = 'High';
+                                    suspiciousActivity = 'Yes';
+                                }
+                            }
+
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td class="transaction-id" onclick="fetchAmlReport('${doc.id}')">${transaction.transactionId || 'N/A'}</td>
+                                <td>${transaction.type || 'N/A'}</td>
+                                <td>${transaction.timestamp ? new Date(transaction.timestamp.seconds * 1000).toLocaleString() : 'N/A'}</td>
+                                <td>${transaction.receiverId || 'N/A'}</td>
+                                <td>${transaction.originCountry || 'N/A'}</td>
+                                <td>${transaction.destinationCountry || 'N/A'}</td>
+                                <td class="transaction-amount">₹${amount}</td>
+                                <td>${customerId}</td>
+                                <td>${riskAnalysis}</td>
+                                <td>${suspiciousActivity}</td>
+                                <td><input type="checkbox" ${flag ? 'checked' : ''} onchange="toggleFlag('${doc.id}', this.checked)"></td>
+                            `;
+                            transactionList.appendChild(row);
+                        });
+                    }
+                }, (error) => {
+                    console.error("Error fetching transactions: ", error);
+                    transactionList.innerHTML = '<tr><td colspan="11">Error fetching transactions. Please try again later.</td></tr>';
+                });
+        }
+
+        // Update the flag status in Firestore
+        function toggleFlag(transactionId, isChecked) {
+            db.collection('payments').doc(transactionId).update({
+                flag: isChecked
+            }).then(() => {
+                console.log(`Transaction ${transactionId} flagged: ${isChecked}`);
+            }).catch((error) => {
+                console.error("Error updating flag: ", error);
+            });
+        }
+
+        // Fetch AML report from Firestore
+        function fetchAmlReport(transactionId) {
+            const reportContent = document.getElementById('amlReportContent');
+            reportContent.innerHTML = '<p>Loading report...</p>';
+
+            db.collection("payments").doc(transactionId).get()
+                .then((doc) => {
+                    if (doc.exists) {
+                        const report = doc.data();
+                        const transactionHistory = report.transactionHistory || [];
+                        const amount = report.amount || 0;
+                        const status = report.status || 'Not Found';
+                        const customerId = report.customerId || 'N/A';
+                        const location = 'Thadomal Shahani Engineering College, Mumbai';
+                        const latitude = '19.108252';
+                        const longitude = '72.836223';
+                        const timePeriod = report.timePeriod || 'N/A';
+                        const receiverId = report.receiverId || 'N/A';
+                        const frequency = report.transactionCount || 0;
+
+                        // Risk Level Calculation
+                        const riskLevel = amount >= 50000 ? 'High' : amount >= 10000 ? 'Medium' : 'Low';
+                        const suspiciousActivity = frequency >= 2 ? 'Yes' : 'No';
+
+                        // Updating the AML report content
+                        reportContent.innerHTML = `
+                            <div class="report-section">
+                                <h3>Customer Profile</h3>
+                                <p><strong>Customer ID:</strong> ${customerId}</p>
+                                <p><strong>Location:</strong> ${location}</p>
+                                <p><strong>Latitude:</strong> ${latitude}</p>
+                                <p><strong>Longitude:</strong> ${longitude}</p>
+                            </div>
+
+                            <div class="report-section">
+                                <h3>Key Observations</h3>
+                                <p><strong>Frequency:</strong> The customer has engaged in transactions exceeding the average amount twice within a 2-5minutes period. This frequency is considered unusual and may indicate potential money laundering activity.</p>
+                                <p><strong>Amount:</strong> The transaction amounts involved are significantly higher than the customer's typical spending habits. This discrepancy warrants further investigation.</p>
+                                <p><strong>Receiver IDs:</strong> The receiver ID ${receiverId} should be analyzed to determine if they are linked to known high-risk individuals or entities.</p>
+                            </div>
+
+                            <div class="report-section">
+                                <h3>Risk Assessment</h3>
+                                <p><strong>Risk Level:</strong> ${riskLevel}</p>
+                                <p><strong>Suspicious Activity:</strong> ${suspiciousActivity}</p>
+                            </div>
+
+                            <div class="report-section">
+                                <h3>Transaction History</h3>
+                                <p>${transactionHistory.length > 0 ? transactionHistory.join('<br>') : 'No previous transactions found.'}</p>
+                            </div>
+                        `;
+                    } else {
+                        reportContent.innerHTML = '<p>No report available for this transaction.</p>';
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error fetching AML report: ", error);
+                    reportContent.innerHTML = '<p>Error fetching report. Please try again later.</p>';
+                });
+
+            document.getElementById('amlModal').style.display = "block";
+        }
+
+        // Close the modal
+        function closeModal() {
+            document.getElementById('amlModal').style.display = "none";
+        }
+
+        // Fetch transactions on page load
+        fetchAllTransactions();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,241 @@
+Transaction ID,Customer ID,Customer Name,Receiver ID,Receiver Name,Transaction Amount,Date,Transaction Type,Country of Origin,Country of Destination,Risk Level,Method of Payment,Previous Flags,Suspicious Activity
+63673182,47694,Grace Hahn,97761,Victoria Carlson,807.3176877,02-01-2024,Transfer,Turkmenistan,Slovakia (Slovak Republic),Low,Credit Card,0,No
+3019500,47694,Grace Hahn,65343,Jacob Munoz II,788.3560124,12-01-2024,Withdrawal,Mozambique,Seychelles,Low,Cash,0,No
+91955970,47694,Grace Hahn,66521,Jaclyn Knight,693.950107,19-01-2024,Transfer,Yemen,Central African Republic,Low,Cash,0,No
+66456644,47694,Grace Hahn,10637,Joshua Wiley,717.4760478,04-02-2024,Withdrawal,Nigeria,Kenya,Low,Credit Card,0,No
+33015098,47694,Grace Hahn,32415,Amy Maldonado,638.4402256,20-02-2024,Withdrawal,Denmark,South Georgia and the South Sandwich Islands,Low,Bank Transfer,0,No
+85444373,47694,Grace Hahn,62949,Franklin Anderson,582.0579498,08-04-2024,Transfer,Slovenia,Cook Islands,Low,Bank Transfer,0,No
+72841646,47694,Grace Hahn,7398,Ariana Smith,755.6487277,05-06-2024,Withdrawal,Hong Kong,Reunion,Low,Credit Card,0,No
+84911193,47694,Grace Hahn,65343,Jacob Munoz II,54855.70295,02-07-2024,Deposit,Trinidad and Tobago,Jamaica,Medium,Bank Transfer,0,Yes
+35602021,47694,Grace Hahn,65343,Jacob Munoz II,78192.85159,31-08-2024,Payment,Ireland,United Arab Emirates,High,Credit Card,1,Yes
+17687860,47694,Grace Hahn,65343,Jacob Munoz II,60267.27848,31-08-2024,Payment,Poland,Singapore,High,Digital Wallet,2,Yes
+30614009,62949,Ricardo Hobbs,34997,Danielle Jones,306.538668,01-01-2024,Deposit,Papua New Guinea,El Salvador,Low,Bank Transfer,0,No
+90995713,62949,Ricardo Hobbs,45421,Edward Wright,98234.11494,29-02-2024,Deposit,Palestinian Territory,British Virgin Islands,Medium,Credit Card,0,Yes
+5379821,62949,Ricardo Hobbs,6931,Tammy Frazier,557.3034816,11-04-2024,Payment,Jersey,Armenia,Low,Cash,0,No
+47396701,62949,Ricardo Hobbs,51205,Hannah Snyder,337.8671991,18-04-2024,Payment,Cape Verde,Lebanon,Low,Credit Card,0,No
+59034269,62949,Ricardo Hobbs,65343,Elizabeth York,391.756194,04-06-2024,Deposit,Guam,Costa Rica,Low,Credit Card,0,No
+30865147,62949,Ricardo Hobbs,45421,Edward Wright,81377.17521,11-07-2024,Withdrawal,Antarctica (the territory South of 60 deg S),Korea,High,Digital Wallet,1,Yes
+89509598,62949,Ricardo Hobbs,45421,Edward Wright,98570.71485,30-07-2024,Transfer,Belgium,Andorra,High,Digital Wallet,2,Yes
+8576775,62949,Ricardo Hobbs,45421,Edward Wright,384.1538018,18-08-2024,Payment,Portugal,French Southern Territories,Low,Digital Wallet,0,No
+13636772,62949,Ricardo Hobbs,74948,Melissa Taylor,901.0426581,03-09-2024,Withdrawal,Chad,Latvia,Low,Bank Transfer,0,No
+88503872,62949,Ricardo Hobbs,61459,Amy Krueger DDS,706.1855313,19-09-2024,Withdrawal,Bulgaria,Bouvet Island (Bouvetoya),Low,Credit Card,0,No
+23156300,7398,Kathleen Davis,21363,Vickie Boyd,87576.63049,21-02-2024,Withdrawal,Philippines,Timor-Leste,Medium,Cash,0,Yes
+53342966,7398,Kathleen Davis,45421,Jamie Hanson,800.9475432,02-03-2024,Payment,Kuwait,Denmark,Low,Digital Wallet,0,No
+58038310,7398,Kathleen Davis,2612,Christopher Peters,961.0943081,23-03-2024,Transfer,Mali,Lao People's Democratic Republic,Low,Cash,0,No
+91579457,7398,Kathleen Davis,66521,Scott White,928.4189384,27-03-2024,Deposit,Cuba,Greenland,Low,Bank Transfer,0,No
+29505699,7398,Kathleen Davis,23905,Elaine Daniel,595.6654591,26-05-2024,Withdrawal,Saint Pierre and Miquelon,Botswana,Low,Credit Card,0,No
+30215900,7398,Kathleen Davis,21363,Vickie Boyd,979.71431,11-07-2024,Deposit,Portugal,Norway,Low,Digital Wallet,0,No
+99705249,7398,Kathleen Davis,21363,Vickie Boyd,56422.91348,28-07-2024,Payment,Cuba,Portugal,High,Digital Wallet,1,Yes
+55671173,7398,Kathleen Davis,33133,Susan Costa,585.9938575,31-07-2024,Transfer,Lithuania,Guatemala,Low,Credit Card,0,No
+54131826,7398,Kathleen Davis,43965,Brenda Russell,517.7962042,16-08-2024,Withdrawal,Micronesia,Jamaica,Low,Credit Card,0,No
+69972098,7398,Kathleen Davis,21363,Vickie Boyd,65008.57949,10-09-2024,Deposit,Bahrain,Namibia,High,Cash,2,Yes
+19415074,66521,Angelica Dyer,2612,Scott Myers,731.5551484,15-01-2024,Transfer,Samoa,Aruba,Low,Digital Wallet,0,No
+22490855,66521,Angelica Dyer,10637,Jennifer Neal,315.2680738,29-01-2024,Deposit,Paraguay,Netherlands Antilles,Low,Bank Transfer,0,No
+29684426,66521,Angelica Dyer,10637,Jennifer Neal,73935.03484,11-02-2024,Deposit,Thailand,Antigua and Barbuda,Medium,Digital Wallet,0,Yes
+31390187,66521,Angelica Dyer,74948,Robert Johnson,563.0066222,27-02-2024,Deposit,Indonesia,Gibraltar,Low,Bank Transfer,0,No
+15848103,66521,Angelica Dyer,33133,John Jordan,713.1332486,08-03-2024,Transfer,Serbia,Bahamas,Low,Digital Wallet,0,No
+18420347,66521,Angelica Dyer,34997,Phyllis Guzman,524.4499228,11-03-2024,Deposit,Bolivia,Cocos (Keeling) Islands,Low,Digital Wallet,0,No
+43896119,66521,Angelica Dyer,10637,Jennifer Neal,97730.64102,16-03-2024,Payment,Rwanda,Cambodia,High,Bank Transfer,1,Yes
+93898211,66521,Angelica Dyer,62949,Jessica Reynolds,835.5116891,09-04-2024,Transfer,Madagascar,Dominican Republic,Low,Digital Wallet,0,No
+92620431,66521,Angelica Dyer,10637,Jennifer Neal,95011.52983,23-04-2024,Withdrawal,Haiti,Bangladesh,High,Digital Wallet,2,Yes
+21801305,66521,Angelica Dyer,34997,Heather Weaver DVM,541.7504025,28-06-2024,Deposit,United Kingdom,Congo,Low,Cash,0,No
+93838848,10637,Jasmin Erickson,2612,Samuel Nguyen,783.9160949,18-01-2024,Payment,Bahamas,Reunion,Low,Bank Transfer,0,No
+26356483,10637,Jasmin Erickson,62949,Sarah Nichols,978.9336823,10-02-2024,Payment,Spain,Czech Republic,Low,Credit Card,0,No
+66421444,10637,Jasmin Erickson,51205,Ana James,68554.9501,02-03-2024,Payment,Indonesia,Holy See (Vatican City State),Medium,Credit Card,0,Yes
+41593281,10637,Jasmin Erickson,51205,Ana James,70060.58817,09-03-2024,Transfer,Wallis and Futuna,Liechtenstein,High,Digital Wallet,1,Yes
+25421173,10637,Jasmin Erickson,62949,Ashley Walker,749.6313882,25-03-2024,Withdrawal,Azerbaijan,Jersey,Low,Cash,0,No
+8602866,10637,Jasmin Erickson,51205,Ana James,315.3561651,23-04-2024,Deposit,Kuwait,Jersey,Low,Credit Card,0,No
+26127899,10637,Jasmin Erickson,39347,Wanda Mueller,788.9841029,20-06-2024,Deposit,Luxembourg,Afghanistan,Low,Bank Transfer,0,No
+24705793,10637,Jasmin Erickson,43965,Derek Watson,389.4059636,28-07-2024,Withdrawal,Niue,Bulgaria,Low,Bank Transfer,0,No
+29891719,10637,Jasmin Erickson,51205,Ana James,92679.87499,02-08-2024,Withdrawal,Liechtenstein,Austria,High,Credit Card,2,Yes
+842363,10637,Jasmin Erickson,5028,Wesley Newman,563.7352056,21-09-2024,Deposit,Wallis and Futuna,Liechtenstein,Low,Digital Wallet,0,No
+55902332,51205,Curtis Foster,6931,Dean Wheeler,449.5689184,07-01-2024,Withdrawal,Palestinian Territory,Wallis and Futuna,Low,Digital Wallet,0,No
+50884870,51205,Curtis Foster,13356,Ronald Rodriguez,496.7070342,28-02-2024,Transfer,Panama,Iceland,Low,Digital Wallet,0,No
+34408233,51205,Curtis Foster,21363,Richard Cooper,844.4421072,16-03-2024,Transfer,Saint Helena,Angola,Low,Bank Transfer,0,No
+69599485,51205,Curtis Foster,66521,Jenna Rojas,766.2527281,24-03-2024,Payment,Nauru,Tunisia,Low,Bank Transfer,0,No
+36308916,51205,Curtis Foster,10637,Jaime Gonzalez,394.9490829,07-05-2024,Deposit,Grenada,Equatorial Guinea,Low,Cash,0,No
+18991681,51205,Curtis Foster,6931,Dean Wheeler,92107.76911,22-06-2024,Withdrawal,Bolivia,Palestinian Territory,Medium,Bank Transfer,0,Yes
+71970089,51205,Curtis Foster,21363,Ashley Robinson,821.2878205,28-06-2024,Transfer,Australia,Colombia,Low,Bank Transfer,0,No
+83212152,51205,Curtis Foster,6931,Dean Wheeler,90287.51453,08-07-2024,Transfer,Estonia,American Samoa,High,Credit Card,1,Yes
+72899588,51205,Curtis Foster,6931,Dean Wheeler,75971.1668,22-08-2024,Transfer,United States of America,Iraq,High,Credit Card,2,Yes
+24966100,51205,Curtis Foster,32415,Robert Barnett,586.2167807,04-09-2024,Payment,Somalia,Wallis and Futuna,Low,Digital Wallet,0,No
+67739772,23905,Angela Banks,34997,David Ray,675.4863724,02-01-2024,Deposit,Botswana,United States Virgin Islands,Low,Bank Transfer,0,No
+20920056,23905,Angela Banks,39347,Danielle Newman,455.1887474,28-02-2024,Deposit,Liberia,Jersey,Low,Credit Card,0,No
+64751325,23905,Angela Banks,5028,Veronica Gutierrez,72071.94878,05-03-2024,Transfer,Guinea,Malawi,Medium,Bank Transfer,0,Yes
+90201190,23905,Angela Banks,5028,Veronica Gutierrez,81475.95985,09-05-2024,Withdrawal,Saint Martin,Botswana,High,Bank Transfer,1,Yes
+90227901,23905,Angela Banks,5028,Veronica Gutierrez,56063.64548,16-06-2024,Transfer,Chad,Martinique,High,Credit Card,2,Yes
+93052350,23905,Angela Banks,5028,Veronica Gutierrez,745.2498714,30-06-2024,Withdrawal,Switzerland,Singapore,Low,Digital Wallet,0,No
+16874250,23905,Angela Banks,45421,Lindsay Lane,693.0849758,08-07-2024,Withdrawal,Bahrain,Israel,Low,Digital Wallet,0,No
+11938850,23905,Angela Banks,45421,Lauren Dunn,401.6859791,24-08-2024,Payment,Angola,Syrian Arab Republic,Low,Cash,0,No
+36045743,23905,Angela Banks,51205,Michelle Lewis,494.2408178,18-09-2024,Deposit,Belgium,Papua New Guinea,Low,Credit Card,0,No
+62723734,23905,Angela Banks,34997,Michelle Gardner,665.8723484,28-09-2024,Payment,Honduras,Algeria,Low,Bank Transfer,0,No
+43385310,97761,Joseph Johnson,66521,Kimberly Cisneros,410.1981304,17-03-2024,Deposit,Belgium,Mexico,Low,Digital Wallet,0,No
+98141755,97761,Joseph Johnson,7398,Carl Collins,535.5859971,21-03-2024,Transfer,Faroe Islands,Pakistan,Low,Cash,0,No
+5858136,97761,Joseph Johnson,74948,Jeremiah Roberts,843.522581,02-04-2024,Withdrawal,Saint Vincent and the Grenadines,Eritrea,Low,Cash,0,No
+2336245,97761,Joseph Johnson,10637,William Mosley,574.42933,10-04-2024,Withdrawal,Serbia,Indonesia,Low,Credit Card,0,No
+71663329,97761,Joseph Johnson,5028,Kevin Johnson,68706.49566,15-04-2024,Withdrawal,Armenia,Somalia,Medium,Bank Transfer,0,Yes
+46051700,97761,Joseph Johnson,5028,Kevin Johnson,54880.79816,25-04-2024,Withdrawal,Algeria,Switzerland,High,Bank Transfer,1,Yes
+41093288,97761,Joseph Johnson,5028,Kevin Johnson,78004.05464,10-06-2024,Deposit,Russian Federation,Faroe Islands,High,Digital Wallet,2,Yes
+77451381,97761,Joseph Johnson,2612,Kathy Le,900.6555842,14-06-2024,Payment,South Africa,Spain,Low,Bank Transfer,0,No
+13709277,97761,Joseph Johnson,5028,Kevin Johnson,383.6519187,22-06-2024,Payment,Albania,Monaco,Low,Credit Card,0,No
+517135,97761,Joseph Johnson,39347,Randy Barrett,900.2459854,19-08-2024,Deposit,Comoros,Isle of Man,Low,Cash,0,No
+71357294,21363,Nicholas Holland,2612,Kyle Glover,510.673902,11-01-2024,Withdrawal,Ethiopia,Canada,Low,Credit Card,0,No
+55604629,21363,Nicholas Holland,39347,Andrea Watts,863.9013475,14-01-2024,Transfer,Cameroon,Czech Republic,Low,Bank Transfer,0,No
+61990695,21363,Nicholas Holland,38684,Mr. Daniel Wright,884.7487482,22-01-2024,Payment,Vietnam,Nigeria,Low,Cash,0,No
+56023234,21363,Nicholas Holland,10637,Jeffrey Moss,56093.51179,31-01-2024,Payment,Georgia,Ghana,Medium,Bank Transfer,0,Yes
+18113734,21363,Nicholas Holland,32415,Regina Meyers,493.2846808,02-03-2024,Payment,Palestinian Territory,Romania,Low,Cash,0,No
+50514949,21363,Nicholas Holland,10637,Jeffrey Moss,68241.83329,25-04-2024,Deposit,China,Guatemala,High,Bank Transfer,1,Yes
+54748972,21363,Nicholas Holland,10637,Jeffrey Moss,91609.46401,11-05-2024,Transfer,Greenland,Mongolia,High,Bank Transfer,2,Yes
+44517760,21363,Nicholas Holland,10637,Jeffrey Moss,419.0564208,17-05-2024,Withdrawal,Liberia,Cape Verde,Low,Credit Card,0,No
+92423845,21363,Nicholas Holland,6931,Douglas Cline,782.4761613,12-07-2024,Payment,Senegal,Korea,Low,Credit Card,0,No
+55880018,21363,Nicholas Holland,10637,Sean Riggs,921.0080436,25-07-2024,Deposit,Solomon Islands,Marshall Islands,Low,Bank Transfer,0,No
+65774557,39347,Robert Hudson,97761,Kenneth Hanson,890.831682,04-03-2024,Payment,Monaco,India,Low,Cash,0,No
+43261594,39347,Robert Hudson,65343,David Weaver,929.1542947,15-03-2024,Withdrawal,Burkina Faso,Chile,Low,Cash,0,No
+77537337,39347,Robert Hudson,70897,Stacy Avila,65481.68373,17-03-2024,Deposit,Japan,Libyan Arab Jamahiriya,Medium,Bank Transfer,0,Yes
+40611177,39347,Robert Hudson,70897,Stacy Avila,95052.37866,14-04-2024,Payment,Canada,Dominican Republic,High,Credit Card,1,Yes
+62987026,39347,Robert Hudson,70897,Stacy Avila,80549.38183,22-05-2024,Transfer,Chile,Haiti,High,Credit Card,2,Yes
+204587,39347,Robert Hudson,43965,Jerry Coleman,974.021884,04-06-2024,Withdrawal,Niue,Korea,Low,Bank Transfer,0,No
+33950846,39347,Robert Hudson,70897,Stacy Avila,967.9536742,06-06-2024,Deposit,Kazakhstan,Wallis and Futuna,Low,Digital Wallet,0,No
+73624652,39347,Robert Hudson,34997,Karen Kelley,482.1024835,21-06-2024,Withdrawal,Suriname,Belgium,Low,Bank Transfer,0,No
+18920285,39347,Robert Hudson,7398,Mary Rios,490.7027028,26-06-2024,Withdrawal,Mongolia,Bahamas,Low,Cash,0,No
+72928030,39347,Robert Hudson,34997,Karen Chaney,786.5162139,23-09-2024,Transfer,Denmark,Mongolia,Low,Bank Transfer,0,No
+52503932,33133,Michelle Hamilton,33133,Rebekah Cook,368.4614154,16-01-2024,Withdrawal,Paraguay,Serbia,Low,Digital Wallet,0,No
+8137856,33133,Michelle Hamilton,66521,Samantha Mcmahon,53828.32232,28-01-2024,Withdrawal,Slovakia (Slovak Republic),Vietnam,Medium,Bank Transfer,0,Yes
+56580250,33133,Michelle Hamilton,66521,Samantha Mcmahon,57158.10345,17-02-2024,Payment,Barbados,Vanuatu,High,Bank Transfer,1,Yes
+8858854,33133,Michelle Hamilton,66521,Samantha Mcmahon,759.3861908,29-04-2024,Deposit,Australia,Saint Pierre and Miquelon,Low,Cash,0,No
+79151900,33133,Michelle Hamilton,66521,Samantha Mcmahon,75705.15842,30-04-2024,Transfer,Haiti,Micronesia,High,Digital Wallet,2,Yes
+96370147,33133,Michelle Hamilton,45421,Jonathan Wallace,620.47594,04-05-2024,Deposit,Haiti,Sweden,Low,Bank Transfer,0,No
+41657984,33133,Michelle Hamilton,33133,Michele Mckinney,529.9813577,07-05-2024,Transfer,Belarus,Tunisia,Low,Cash,0,No
+46147603,33133,Michelle Hamilton,23905,Luke Mendoza,662.7656741,01-07-2024,Deposit,Tunisia,Lithuania,Low,Digital Wallet,0,No
+27736113,33133,Michelle Hamilton,97761,Stephen Medina,958.012687,04-08-2024,Deposit,United States Virgin Islands,Venezuela,Low,Bank Transfer,0,No
+33646463,33133,Michelle Hamilton,51205,Dean Webb,550.1999166,09-09-2024,Withdrawal,Tajikistan,Rwanda,Low,Cash,0,No
+4185052,45421,Benjamin Edwards,34997,Patricia Henry,95348.67068,16-04-2024,Deposit,Andorra,Portugal,Medium,Cash,0,Yes
+54526985,45421,Benjamin Edwards,62949,Rebecca Duran,978.4243762,22-04-2024,Transfer,Russian Federation,Ghana,Low,Credit Card,0,No
+45682013,45421,Benjamin Edwards,10637,Daniel Simpson,625.8203939,10-05-2024,Payment,Croatia,Kyrgyz Republic,Low,Cash,0,No
+34220283,45421,Benjamin Edwards,21363,Lisa Miller,482.4140252,18-05-2024,Transfer,Montenegro,Kiribati,Low,Cash,0,No
+76124318,45421,Benjamin Edwards,45421,Donald Cooper,818.1002549,24-07-2024,Transfer,Qatar,South Georgia and the South Sandwich Islands,Low,Cash,0,No
+41400293,45421,Benjamin Edwards,34997,Patricia Henry,59913.54887,02-08-2024,Withdrawal,Turkmenistan,Solomon Islands,High,Bank Transfer,1,Yes
+12250011,45421,Benjamin Edwards,47694,Sydney Nolan,906.3028397,13-08-2024,Withdrawal,Somalia,El Salvador,Low,Digital Wallet,0,No
+30077814,45421,Benjamin Edwards,13356,Joseph Brown,565.6410698,19-08-2024,Transfer,Eritrea,Indonesia,Low,Bank Transfer,0,No
+97071363,45421,Benjamin Edwards,34997,Patricia Henry,92742.75577,14-09-2024,Payment,Saint Barthelemy,British Virgin Islands,High,Bank Transfer,2,Yes
+68554432,45421,Benjamin Edwards,34997,Patricia Henry,983.3902234,24-09-2024,Payment,North Macedonia,Spain,Low,Cash,0,No
+91588329,74948,Bruce Martinez,38684,Breanna Williams,529.5441162,15-01-2024,Withdrawal,Reunion,Pakistan,Low,Bank Transfer,0,No
+89853505,74948,Bruce Martinez,33133,Christina Wilson,342.6231671,04-02-2024,Payment,Afghanistan,Marshall Islands,Low,Credit Card,0,No
+92191410,74948,Bruce Martinez,23905,Lisa Castro,89764.06011,16-02-2024,Transfer,Swaziland,Suriname,Medium,Credit Card,0,Yes
+70783269,74948,Bruce Martinez,23905,Lisa Castro,90974.53922,22-03-2024,Withdrawal,Syrian Arab Republic,Iran,High,Credit Card,1,Yes
+34596741,74948,Bruce Martinez,23905,Lisa Castro,80489.71,22-03-2024,Deposit,Portugal,New Zealand,High,Bank Transfer,2,Yes
+26087134,74948,Bruce Martinez,6931,Joshua Lloyd,605.2834426,26-05-2024,Deposit,Svalbard & Jan Mayen Islands,Cayman Islands,Low,Cash,0,No
+20960824,74948,Bruce Martinez,6931,Juan Simpson,862.6283328,07-06-2024,Transfer,Cote d'Ivoire,Moldova,Low,Credit Card,0,No
+82098594,74948,Bruce Martinez,5028,Heather Bennett,581.4719423,09-06-2024,Deposit,Liberia,Afghanistan,Low,Digital Wallet,0,No
+60105971,74948,Bruce Martinez,32415,Shelia Jones,513.9731276,13-06-2024,Payment,Singapore,Serbia,Low,Credit Card,0,No
+51086599,74948,Bruce Martinez,23905,Lisa Castro,532.5871074,22-07-2024,Withdrawal,Qatar,Azerbaijan,Low,Bank Transfer,0,No
+1050323,70897,Theresa Noble,65343,Mr. Adam Hall,64145.98342,12-01-2024,Withdrawal,Antarctica (the territory South of 60 deg S),Angola,Medium,Bank Transfer,0,Yes
+4603357,70897,Theresa Noble,65343,Mr. Adam Hall,99292.33256,20-01-2024,Payment,Iceland,Iran,High,Cash,1,Yes
+54279318,70897,Theresa Noble,65343,Mr. Adam Hall,381.9470505,08-02-2024,Withdrawal,Macao,Paraguay,Low,Credit Card,0,No
+64276427,70897,Theresa Noble,32415,Tammy Bruce,669.05796,07-06-2024,Transfer,Faroe Islands,Afghanistan,Low,Bank Transfer,0,No
+22309739,70897,Theresa Noble,6931,Christopher Sanders,718.3794332,09-06-2024,Deposit,Northern Mariana Islands,Austria,Low,Credit Card,0,No
+22211713,70897,Theresa Noble,66521,Julia Baker,782.6923415,22-06-2024,Payment,Kiribati,South Georgia and the South Sandwich Islands,Low,Credit Card,0,No
+70146560,70897,Theresa Noble,61459,Curtis Watson,919.5763583,26-06-2024,Deposit,Uganda,Eritrea,Low,Cash,0,No
+72153929,70897,Theresa Noble,65343,Eugene Curry,506.1508156,23-07-2024,Deposit,Israel,Saint Lucia,Low,Cash,0,No
+14438700,70897,Theresa Noble,65343,Mr. Adam Hall,57218.88948,15-08-2024,Deposit,Cuba,Botswana,High,Digital Wallet,2,Yes
+44808765,70897,Theresa Noble,7398,Mary Lindsey,683.5693067,21-09-2024,Transfer,Antarctica (the territory South of 60 deg S),Samoa,Low,Credit Card,0,No
+66417351,32415,Teresa Reed,61459,Robert Wilson,823.9966852,07-01-2024,Withdrawal,Cocos (Keeling) Islands,Finland,Low,Cash,0,No
+97958641,32415,Teresa Reed,13356,William Lawson,512.3505059,08-01-2024,Transfer,Saint Martin,Finland,Low,Digital Wallet,0,No
+57570998,32415,Teresa Reed,23905,Dwayne Larsen,863.9928154,09-01-2024,Withdrawal,Macao,British Indian Ocean Territory (Chagos Archipelago),Low,Bank Transfer,0,No
+78353653,32415,Teresa Reed,23905,Dwayne Larsen,70078.72718,22-02-2024,Withdrawal,Faroe Islands,British Virgin Islands,Medium,Cash,0,Yes
+75033169,32415,Teresa Reed,97761,Dennis Bush,879.1416108,18-04-2024,Transfer,Sierra Leone,Belgium,Low,Credit Card,0,No
+66478756,32415,Teresa Reed,62949,James Pena,317.2289866,09-07-2024,Transfer,Belarus,Kuwait,Low,Cash,0,No
+24233550,32415,Teresa Reed,23905,Dwayne Larsen,50527.43275,22-07-2024,Withdrawal,Angola,Liberia,High,Digital Wallet,1,Yes
+64584776,32415,Teresa Reed,10637,Hannah Brown,335.8845975,24-07-2024,Payment,Mali,Senegal,Low,Credit Card,0,No
+11204182,32415,Teresa Reed,5028,William Schmidt,611.5745133,03-09-2024,Payment,Cuba,Saint Martin,Low,Cash,0,No
+22842817,32415,Teresa Reed,23905,Dwayne Larsen,62240.57991,14-09-2024,Deposit,Cyprus,Spain,High,Bank Transfer,2,Yes
+97882974,38684,David Hernandez,45421,Richard Herrera,687.061607,14-01-2024,Withdrawal,Dominican Republic,Serbia,Low,Cash,0,No
+35975667,38684,David Hernandez,47694,Kathryn Murray,60146.20666,16-01-2024,Deposit,Belgium,Greenland,Medium,Digital Wallet,0,Yes
+64434056,38684,David Hernandez,34997,Robert Richardson,981.7672802,24-01-2024,Transfer,Guatemala,Madagascar,Low,Credit Card,0,No
+98831171,38684,David Hernandez,47694,Kathryn Murray,56343.82269,27-02-2024,Transfer,Lesotho,Ukraine,High,Credit Card,1,Yes
+10988790,38684,David Hernandez,47694,Kathryn Murray,304.4682745,29-02-2024,Payment,Antigua and Barbuda,Colombia,Low,Cash,0,No
+28573642,38684,David Hernandez,47694,Kathryn Murray,76478.8528,26-05-2024,Deposit,South Africa,Cocos (Keeling) Islands,High,Cash,2,Yes
+83261235,38684,David Hernandez,34997,Felicia Payne,395.7857558,18-06-2024,Payment,Turkmenistan,Mali,Low,Cash,0,No
+86856664,38684,David Hernandez,6931,Ricky Johnson,774.4565083,05-07-2024,Payment,Ukraine,Samoa,Low,Cash,0,No
+81975194,38684,David Hernandez,10637,Joseph Ingram,688.8430326,22-09-2024,Payment,Argentina,Saint Kitts and Nevis,Low,Bank Transfer,0,No
+93622072,38684,David Hernandez,6931,Ryan Guzman,377.7118301,27-09-2024,Withdrawal,Cameroon,Qatar,Low,Credit Card,0,No
+89107463,6931,Mrs. Carol Johnson,39347,Charlene Tapia,422.707615,22-01-2024,Payment,Ecuador,Mali,Low,Cash,0,No
+90396919,6931,Mrs. Carol Johnson,51205,Kathryn Kelly,833.6164749,24-02-2024,Transfer,Liechtenstein,Sao Tome and Principe,Low,Cash,0,No
+35215777,6931,Mrs. Carol Johnson,51205,Timothy Newman,846.671048,01-03-2024,Transfer,Ghana,Cocos (Keeling) Islands,Low,Bank Transfer,0,No
+92773810,6931,Mrs. Carol Johnson,39347,Amy Gordon,883.2116343,17-05-2024,Payment,United States Minor Outlying Islands,Slovakia (Slovak Republic),Low,Bank Transfer,0,No
+26273007,6931,Mrs. Carol Johnson,2612,Duane Torres,71741.08661,21-05-2024,Withdrawal,Tunisia,Slovenia,Medium,Digital Wallet,0,Yes
+42206895,6931,Mrs. Carol Johnson,47694,Susan Clayton,698.6100015,21-06-2024,Deposit,Tunisia,Turks and Caicos Islands,Low,Credit Card,0,No
+98995133,6931,Mrs. Carol Johnson,2612,Duane Torres,534.8031851,02-07-2024,Payment,Germany,Burundi,Low,Credit Card,0,No
+19026458,6931,Mrs. Carol Johnson,33133,Brandy Johnson,346.1453505,30-07-2024,Payment,Norfolk Island,Panama,Low,Digital Wallet,0,No
+66264490,6931,Mrs. Carol Johnson,2612,Duane Torres,79655.15848,07-08-2024,Payment,Trinidad and Tobago,Tuvalu,High,Cash,1,Yes
+30555752,6931,Mrs. Carol Johnson,2612,Duane Torres,76412.70414,01-09-2024,Payment,Bahrain,Lithuania,High,Digital Wallet,2,Yes
+5203554,2612,David Smith,7398,Sandra Sanchez,343.3275778,22-02-2024,Payment,Congo,British Virgin Islands,Low,Bank Transfer,0,No
+94115598,2612,David Smith,61459,Debra Adkins,921.184008,13-03-2024,Withdrawal,Ghana,Congo,Low,Digital Wallet,0,No
+72206203,2612,David Smith,2612,Jill Contreras,882.8412044,03-04-2024,Transfer,Morocco,Belarus,Low,Credit Card,0,No
+91607712,2612,David Smith,47694,James Skinner,734.0877901,06-07-2024,Transfer,Malaysia,Malaysia,Low,Digital Wallet,0,No
+79900151,2612,David Smith,23905,Jeremy Webb,350.701173,22-07-2024,Deposit,Egypt,Antigua and Barbuda,Low,Digital Wallet,0,No
+76297699,2612,David Smith,21363,Gary Meadows,526.9233159,02-08-2024,Payment,Netherlands Antilles,Pakistan,Low,Cash,0,No
+25854913,2612,David Smith,2612,Jill Contreras,93583.91613,14-08-2024,Deposit,Indonesia,Romania,Medium,Cash,0,Yes
+46121586,2612,David Smith,7398,Tiffany Johnson,322.380455,16-09-2024,Payment,San Marino,Dominica,Low,Digital Wallet,0,No
+71575790,2612,David Smith,2612,Jill Contreras,76987.3751,18-09-2024,Payment,Isle of Man,Antigua and Barbuda,High,Bank Transfer,1,Yes
+41110645,2612,David Smith,2612,Jill Contreras,84538.57608,21-09-2024,Deposit,Solomon Islands,Bahrain,High,Credit Card,2,Yes
+74577121,43965,Laura Clayton,34997,Nathan Patterson,859.0005532,29-01-2024,Withdrawal,Bahrain,Mexico,Low,Bank Transfer,0,No
+25100325,43965,Laura Clayton,21363,Kenneth Adams,542.1131745,15-04-2024,Payment,Angola,New Zealand,Low,Cash,0,No
+93915183,43965,Laura Clayton,23905,Linda Williams,508.0425653,02-05-2024,Payment,Puerto Rico,Seychelles,Low,Credit Card,0,No
+36084948,43965,Laura Clayton,6931,Frank Petersen,331.4122932,23-06-2024,Payment,Sudan,Malawi,Low,Cash,0,No
+21864323,43965,Laura Clayton,38684,John Rodriguez,581.3498223,28-06-2024,Transfer,Syrian Arab Republic,Northern Mariana Islands,Low,Bank Transfer,0,No
+3424298,43965,Laura Clayton,34997,Nathan Patterson,58728.57784,29-07-2024,Transfer,United States Minor Outlying Islands,Taiwan,Medium,Digital Wallet,0,Yes
+96992933,43965,Laura Clayton,6931,Amber Chan,820.6262587,02-08-2024,Payment,New Zealand,Libyan Arab Jamahiriya,Low,Cash,0,No
+62930049,43965,Laura Clayton,34997,Nathan Patterson,59974.33873,17-08-2024,Withdrawal,Brazil,Swaziland,High,Credit Card,1,Yes
+95444469,43965,Laura Clayton,65343,Brian Lawrence,989.9204628,28-08-2024,Payment,Yemen,Maldives,Low,Cash,0,No
+80302566,43965,Laura Clayton,34997,Nathan Patterson,84971.87804,05-09-2024,Withdrawal,Cambodia,Portugal,High,Credit Card,2,Yes
+45773159,13356,Samuel Maldonado,74948,Brittany Peterson,90395.57404,03-02-2024,Payment,China,Dominica,Medium,Bank Transfer,0,Yes
+60938064,13356,Samuel Maldonado,32415,Anthony Henry,697.1008985,24-02-2024,Transfer,Burkina Faso,Egypt,Low,Credit Card,0,No
+19286048,13356,Samuel Maldonado,74948,Brittany Peterson,624.7427857,25-02-2024,Payment,Montserrat,Indonesia,Low,Cash,0,No
+95777755,13356,Samuel Maldonado,66521,Eric Bowers,445.8805146,17-03-2024,Deposit,Christmas Island,Brunei Darussalam,Low,Credit Card,0,No
+29112622,13356,Samuel Maldonado,6931,Michael Deleon,846.0682779,30-04-2024,Withdrawal,Heard Island and McDonald Islands,India,Low,Digital Wallet,0,No
+95530968,13356,Samuel Maldonado,62949,Mr. Nathan Rodriguez,660.9076081,20-06-2024,Withdrawal,Norway,Ukraine,Low,Digital Wallet,0,No
+53294789,13356,Samuel Maldonado,39347,Kenneth Parker,704.4759762,04-07-2024,Deposit,Northern Mariana Islands,Jersey,Low,Cash,0,No
+72476171,13356,Samuel Maldonado,74948,Brittany Peterson,56264.77211,05-07-2024,Payment,India,Kuwait,High,Cash,1,Yes
+70512273,13356,Samuel Maldonado,74948,Brittany Peterson,70667.60337,09-07-2024,Payment,Tunisia,Maldives,High,Cash,2,Yes
+68381852,13356,Samuel Maldonado,38684,Christine Williams MD,532.3518737,21-08-2024,Payment,Saint Vincent and the Grenadines,Mexico,Low,Digital Wallet,0,No
+85857841,5028,Sonia Smith,70897,Kimberly Sanchez,411.9156657,07-01-2024,Payment,Falkland Islands (Malvinas),South Africa,Low,Cash,0,No
+63181970,5028,Sonia Smith,97761,Jeremy Alexander,54831.46543,19-01-2024,Payment,Jamaica,New Caledonia,Medium,Credit Card,0,Yes
+38405809,5028,Sonia Smith,97761,Jeremy Alexander,98456.90394,10-03-2024,Withdrawal,Tunisia,Senegal,High,Bank Transfer,1,Yes
+88025513,5028,Sonia Smith,62949,Jasmine George,824.4915292,02-04-2024,Withdrawal,Syrian Arab Republic,Saudi Arabia,Low,Digital Wallet,0,No
+207487,5028,Sonia Smith,97761,Jeremy Alexander,60824.6122,07-04-2024,Deposit,Ecuador,Seychelles,High,Credit Card,2,Yes
+74720076,5028,Sonia Smith,6931,Rhonda Rose,390.1288384,15-04-2024,Withdrawal,Kiribati,Iran,Low,Bank Transfer,0,No
+20422613,5028,Sonia Smith,97761,Jeremy Alexander,796.2226242,08-06-2024,Withdrawal,Solomon Islands,Puerto Rico,Low,Cash,0,No
+77937795,5028,Sonia Smith,2612,William Mccormick,373.841497,07-07-2024,Withdrawal,Rwanda,Czech Republic,Low,Credit Card,0,No
+35144377,5028,Sonia Smith,34997,Nicole Montoya,487.8684549,21-07-2024,Deposit,Guinea-Bissau,French Southern Territories,Low,Bank Transfer,0,No
+77833069,5028,Sonia Smith,66521,Chelsea Robinson,407.7532889,10-08-2024,Withdrawal,Czech Republic,Estonia,Low,Credit Card,0,No
+14473173,34997,Holly Sparks,65343,Amanda King,557.0438113,22-01-2024,Transfer,Paraguay,Zimbabwe,Low,Cash,0,No
+21448851,34997,Holly Sparks,38684,Faith Lee,846.7243691,23-02-2024,Deposit,Cayman Islands,South Georgia and the South Sandwich Islands,Low,Bank Transfer,0,No
+76782970,34997,Holly Sparks,61459,Mr. Hunter Lewis,527.8194967,28-04-2024,Deposit,Zimbabwe,Hong Kong,Low,Cash,0,No
+12165438,34997,Holly Sparks,38684,Faith Lee,83886.52794,23-05-2024,Deposit,Puerto Rico,Bangladesh,Medium,Bank Transfer,0,Yes
+12350349,34997,Holly Sparks,47694,Trevor Brown MD,536.2523925,26-05-2024,Transfer,North Macedonia,Morocco,Low,Digital Wallet,0,No
+29800051,34997,Holly Sparks,32415,Christopher Burch,859.41579,29-05-2024,Payment,Singapore,Eritrea,Low,Bank Transfer,0,No
+38154151,34997,Holly Sparks,65343,Thomas Johnson,878.5137441,31-05-2024,Payment,Greenland,Kazakhstan,Low,Digital Wallet,0,No
+6062497,34997,Holly Sparks,38684,Faith Lee,54181.87116,07-08-2024,Deposit,Netherlands,Seychelles,High,Credit Card,1,Yes
+51509185,34997,Holly Sparks,38684,Faith Lee,89139.55364,11-08-2024,Deposit,Falkland Islands (Malvinas),Mexico,High,Digital Wallet,2,Yes
+50233094,34997,Holly Sparks,6931,Michael Jefferson,887.6748139,20-08-2024,Deposit,Denmark,Malawi,Low,Digital Wallet,0,No
+67339642,65343,Kimberly Morgan,45421,Mrs. Sara Thornton,672.9566342,07-02-2024,Withdrawal,French Guiana,Samoa,Low,Bank Transfer,0,No
+63711069,65343,Kimberly Morgan,7398,Eric Gay,987.8457953,11-03-2024,Deposit,Antarctica (the territory South of 60 deg S),Qatar,Low,Cash,0,No
+13672873,65343,Kimberly Morgan,43965,Brandon Berger,342.6320435,25-04-2024,Deposit,Maldives,Vanuatu,Low,Digital Wallet,0,No
+54482240,65343,Kimberly Morgan,43965,Brandon Berger,73603.92446,05-05-2024,Deposit,Zimbabwe,Canada,Medium,Credit Card,0,Yes
+81898518,65343,Kimberly Morgan,43965,Brandon Berger,85793.37503,05-06-2024,Transfer,Croatia,Turkey,High,Cash,1,Yes
+77029400,65343,Kimberly Morgan,62949,Susan Oneal,577.9036097,12-06-2024,Transfer,Kuwait,Niue,Low,Cash,0,No
+68126525,65343,Kimberly Morgan,5028,Mr. Darren Gray,860.5303086,17-06-2024,Payment,Ethiopia,Afghanistan,Low,Bank Transfer,0,No
+92595076,65343,Kimberly Morgan,43965,Brandon Berger,53899.06161,03-07-2024,Deposit,Venezuela,Guinea-Bissau,High,Digital Wallet,2,Yes
+74669574,65343,Kimberly Morgan,13356,Karen Stafford,902.3685803,11-08-2024,Withdrawal,Albania,Italy,Low,Digital Wallet,0,No
+99155927,65343,Kimberly Morgan,61459,Jason Chen,309.1835461,20-08-2024,Payment,San Marino,Tonga,Low,Credit Card,0,No
+53787409,61459,Taylor Gibson DVM,6931,Micheal Silva,414.8151061,02-01-2024,Payment,Guadeloupe,Bosnia and Herzegovina,Low,Digital Wallet,0,No
+46967469,61459,Taylor Gibson DVM,5028,Bradley White,93884.61297,06-01-2024,Transfer,Turks and Caicos Islands,South Africa,Medium,Credit Card,0,Yes
+80481505,61459,Taylor Gibson DVM,5028,Bradley White,90317.84052,23-01-2024,Deposit,Guinea-Bissau,Bolivia,High,Credit Card,1,Yes
+59908271,61459,Taylor Gibson DVM,47694,Corey Banks,880.9951377,06-02-2024,Withdrawal,Grenada,Antarctica (the territory South of 60 deg S),Low,Bank Transfer,0,No
+8971588,61459,Taylor Gibson DVM,5028,Bradley White,351.7585485,25-02-2024,Transfer,Portugal,Niger,Low,Cash,0,No
+90327737,61459,Taylor Gibson DVM,62949,William Curtis,654.5298603,23-04-2024,Payment,Saint Vincent and the Grenadines,Malawi,Low,Credit Card,0,No
+76402157,61459,Taylor Gibson DVM,5028,Bradley White,57716.45408,22-05-2024,Deposit,Greenland,Benin,High,Digital Wallet,2,Yes
+55363018,61459,Taylor Gibson DVM,13356,Melissa Perez,715.5610891,09-06-2024,Payment,Portugal,Austria,Low,Digital Wallet,0,No
+49379434,61459,Taylor Gibson DVM,65343,Zachary Roth,780.1331316,29-06-2024,Payment,Tajikistan,Reunion,Low,Bank Transfer,0,No
+93610328,61459,Taylor Gibson DVM,51205,Patrick Simpson,717.5174751,26-09-2024,Withdrawal,New Zealand,Central African Republic,Low,Digital Wallet,0,No

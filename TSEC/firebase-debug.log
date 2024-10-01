@@ -1,0 +1,126 @@
+[debug] [2024-09-30T06:30:20.316Z] ----------------------------------------------------------------------
+[debug] [2024-09-30T06:30:20.318Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Rahul Ganatra\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init functions
+[debug] [2024-09-30T06:30:20.318Z] CLI Version:   13.20.1
+[debug] [2024-09-30T06:30:20.318Z] Platform:      win32
+[debug] [2024-09-30T06:30:20.319Z] Node Version:  v20.11.1
+[debug] [2024-09-30T06:30:20.319Z] Time:          Mon Sep 30 2024 12:00:20 GMT+0530 (India Standard Time)
+[debug] [2024-09-30T06:30:20.319Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-09-30T06:30:20.321Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-09-30T06:30:20.356Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-09-30T06:30:20.356Z] > authorizing via signed-in user (rahul.ganatra@somaiya.edu)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Rahul Ganatra\OneDrive\Desktop\TSEC
+
+[debug] [2024-09-30T06:30:20.977Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-09-30T06:30:20.978Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-09-30T06:30:55.493Z] ----------------------------------------------------------------------
+[debug] [2024-09-30T06:30:55.496Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Rahul Ganatra\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init functions
+[debug] [2024-09-30T06:30:55.496Z] CLI Version:   13.20.1
+[debug] [2024-09-30T06:30:55.496Z] Platform:      win32
+[debug] [2024-09-30T06:30:55.496Z] Node Version:  v20.11.1
+[debug] [2024-09-30T06:30:55.496Z] Time:          Mon Sep 30 2024 12:00:55 GMT+0530 (India Standard Time)
+[debug] [2024-09-30T06:30:55.496Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-09-30T06:30:55.502Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-09-30T06:30:55.502Z] > authorizing via signed-in user (rahul.ganatra@somaiya.edu)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Rahul Ganatra\OneDrive\Desktop\TSEC
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-09-30T06:30:59.718Z] Checked if tokens are valid: false, expires at: 1711981534687
+[debug] [2024-09-30T06:30:59.718Z] Checked if tokens are valid: false, expires at: 1711981534687
+[debug] [2024-09-30T06:30:59.719Z] > refreshing access token with scopes: []
+[debug] [2024-09-30T06:30:59.720Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-09-30T06:30:59.720Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-09-30T06:31:00.000Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-09-30T06:31:00.000Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-09-30T06:31:00.028Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-09-30T06:31:00.586Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-09-30T06:31:00.586Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project tsec-1e5ee (TSEC) 
+[info] 
+=== Functions Setup
+[debug] [2024-09-30T06:31:06.862Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-09-30T06:31:06.862Z] > authorizing via signed-in user (rahul.ganatra@somaiya.edu)
+[debug] [2024-09-30T06:31:06.862Z] [iam] checking project tsec-1e5ee for permissions ["firebase.projects.get"]
+[debug] [2024-09-30T06:31:06.862Z] Checked if tokens are valid: true, expires at: 1727681459000
+[debug] [2024-09-30T06:31:06.862Z] Checked if tokens are valid: true, expires at: 1727681459000
+[debug] [2024-09-30T06:31:06.862Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/tsec-1e5ee:testIamPermissions [none]
+[debug] [2024-09-30T06:31:06.862Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/tsec-1e5ee:testIamPermissions x-goog-quota-user=projects/tsec-1e5ee
+[debug] [2024-09-30T06:31:06.862Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/tsec-1e5ee:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-09-30T06:31:12.113Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/tsec-1e5ee:testIamPermissions 200
+[debug] [2024-09-30T06:31:12.113Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/tsec-1e5ee:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-09-30T06:31:12.114Z] Checked if tokens are valid: true, expires at: 1727681459000
+[debug] [2024-09-30T06:31:12.114Z] Checked if tokens are valid: true, expires at: 1727681459000
+[debug] [2024-09-30T06:31:12.114Z] Checked if tokens are valid: true, expires at: 1727681459000
+[debug] [2024-09-30T06:31:12.114Z] Checked if tokens are valid: true, expires at: 1727681459000
+[debug] [2024-09-30T06:31:12.114Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/tsec-1e5ee/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-09-30T06:31:12.114Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/tsec-1e5ee/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/tsec-1e5ee
+[debug] [2024-09-30T06:31:12.115Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/tsec-1e5ee/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-09-30T06:31:12.115Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/tsec-1e5ee/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/tsec-1e5ee
+[debug] [2024-09-30T06:31:17.688Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/tsec-1e5ee/services/cloudfunctions.googleapis.com 200
+[debug] [2024-09-30T06:31:17.688Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/tsec-1e5ee/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2024-09-30T06:31:17.689Z] Checked if tokens are valid: true, expires at: 1727681459000
+[debug] [2024-09-30T06:31:17.689Z] Checked if tokens are valid: true, expires at: 1727681459000
+[debug] [2024-09-30T06:31:17.689Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/tsec-1e5ee/services/cloudfunctions.googleapis.com:enable [none]
+[debug] [2024-09-30T06:31:17.689Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/tsec-1e5ee/services/cloudfunctions.googleapis.com:enable x-goog-quota-user=projects/tsec-1e5ee
+[debug] [2024-09-30T06:31:17.694Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/tsec-1e5ee/services/runtimeconfig.googleapis.com 200
+[debug] [2024-09-30T06:31:17.694Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/tsec-1e5ee/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-09-30T06:31:18.327Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/tsec-1e5ee/services/cloudfunctions.googleapis.com:enable 200
+[debug] [2024-09-30T06:31:18.327Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/tsec-1e5ee/services/cloudfunctions.googleapis.com:enable [omitted]
+[debug] [2024-09-30T06:31:28.343Z] Checked if tokens are valid: true, expires at: 1727681459000
+[debug] [2024-09-30T06:31:28.344Z] Checked if tokens are valid: true, expires at: 1727681459000
+[debug] [2024-09-30T06:31:28.344Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/tsec-1e5ee/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-09-30T06:31:28.344Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/tsec-1e5ee/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/tsec-1e5ee
+[debug] [2024-09-30T06:31:30.136Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/tsec-1e5ee/services/cloudfunctions.googleapis.com 200
+[debug] [2024-09-30T06:31:30.136Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/tsec-1e5ee/services/cloudfunctions.googleapis.com [omitted]
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[info] +  Wrote functions/requirements.txt 
+[info] +  Wrote functions/.gitignore 
+[info] +  Wrote functions/main.py 
+[debug] [2024-09-30T06:31:47.770Z] Running command with virtualenv: command="C:\Users\Rahul Ganatra\OneDrive\Desktop\TSEC\functions\venv\Scripts\activate.bat", args=["","&&","pip3","install","--upgrade","pip"]
+[debug] [2024-09-30T06:31:49.581Z] Error: spawn "C:\Users\Rahul Ganatra\OneDrive\Desktop\TSEC\functions\venv\Scripts\activate.bat" ENOENT
+    at notFoundError (C:\Users\Rahul Ganatra\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:6:26)
+    at verifyENOENT (C:\Users\Rahul Ganatra\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:40:16)
+    at cp.emit (C:\Users\Rahul Ganatra\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:27:25)
+    at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+[error] 
+[error] Error: An unexpected error has occurred.
