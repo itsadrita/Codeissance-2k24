@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SimplePay - Secure Payment Gateway</title>
+    <title>SimplePay - Transaction History</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,7 +15,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 40px auto;
             padding: 20px;
         }
@@ -26,6 +26,7 @@
             padding: 30px;
             margin-bottom: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
         }
 
         h1 {
@@ -34,9 +35,35 @@
             margin-bottom: 30px;
         }
 
-        h2 {
-            color: #333;
-            margin-bottom: 20px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            color: #1a73e8;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .transaction-id {
+            color: #1a73e8;
+        }
+
+        .transaction-amount {
+            font-weight: bold;
+            color: #dc3545;
         }
 
         .button {
@@ -47,168 +74,39 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
-            width: 100%;
-            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
         }
 
         .button:hover {
             background-color: #155db1;
         }
-
-        input[type="text"],
-        input[type="number"],
-        select {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-
-        input[type="number"]::-webkit-inner-spin-button,
-        input[type="number"]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        input[type="number"] {
-            -moz-appearance: textfield;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .card-info {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .card-info input {
-            width: 48%;
-        }
-
-        .secure-badge {
-            text-align: center;
-            margin-top: 20px;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .secure-badge i {
-            color: #28a745;
-            margin-right: 5px;
-        }
-
-        #transactionHistory {
-            margin-top: 40px;
-        }
-
-        #transactionHistory h3 {
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        #transactionHistory ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        #transactionHistory li {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 4px;
-        }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
     <div class="container">
-        <h1>SimplePay</h1>
-
+        <h1>Transaction History</h1>
         <div class="card">
-            <h2>Secure Payment</h2>
-            <form id="paymentForm">
-                <div class="form-group">
-                    <label for="paymentMethod">Payment Method</label>
-                    <select id="paymentMethod" required>
-                        <option value="card">Card Payment</option>
-                        <option value="contact">Contact Payment</option>
-                        <option value="neft">NEFT</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="customerId">Customer ID</label>
-                    <input type="text" id="customerId" required>
-                </div>
-                <div class="form-group">
-                    <label for="receiverId">Receiver ID</label>
-                    <input type="text" id="receiverId" required>
-                </div>
-                <div class="form-group">
-                    <label for="amount">Amount (₹)</label>
-                    <input type="number" id="amount" required>
-                </div>
-                <div class="form-group">
-                    <label for="originCountry">Country of Origin</label>
-                    <input type="text" id="originCountry" required>
-                </div>
-                <div class="form-group">
-                    <label for="destinationCountry">Country of Destination</label>
-                    <input type="text" id="destinationCountry" required>
-                </div>
-                <div id="cardPaymentFields">
-                    <div class="form-group">
-                        <label for="cardNumber">Card Number</label>
-                        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
-                    </div>
-                    <div class="card-info">
-                        <div class="form-group">
-                            <label for="expiryDate">Expiry Date</label>
-                            <input type="text" id="expiryDate" placeholder="MM/YY">
-                        </div>
-                        <div class="form-group">
-                            <label for="cvv">CVV</label>
-                            <input type="text" id="cvv" placeholder="123">
-                        </div>
-                    </div>
-                </div>
-                <div id="contactPaymentFields" style="display: none;">
-                    <div class="form-group">
-                        <label for="contactNumber">Contact Number</label>
-                        <input type="tel" id="contactNumber" placeholder="Enter contact number" pattern="[0-9]{10}">
-                    </div>
-                </div>
-                <div id="neftPaymentFields" style="display: none;">
-                    <div class="form-group">
-                        <label for="accountNumber">Account Number</label>
-                        <input type="text" id="accountNumber" placeholder="Enter account number">
-                    </div>
-                    <div class="form-group">
-                        <label for="ifscCode">IFSC Code</label>
-                        <input type="text" id="ifscCode" placeholder="Enter IFSC code">
-                    </div>
-                </div>
-                <button type="submit" class="button">Pay Securely</button>
-            </form>
-            <div class="secure-badge">
-                <i class="fas fa-lock"></i> Your payment is secure and encrypted
-            </div>
-
-            <button onclick="window.location.href='user-transaction.html'" class="button" style="margin-top: 20px;">View
-                Transaction History</button>
+            <table id="transactionTable">
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Type</th>
+                        <th>Date</th>
+                        <th>Receiver</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionList">
+                    <!-- Transactions will be dynamically added here -->
+                </tbody>
+            </table>
         </div>
-    </div>
+        <a href="user-dashboard.html" class="button">Back to Dashboard</a>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
@@ -232,192 +130,51 @@
         // Initialize Firestore
         const db = firebase.firestore();
 
-        const paymentMethodSelect = document.getElementById('paymentMethod');
-        const cardPaymentFields = document.getElementById('cardPaymentFields');
-        const contactPaymentFields = document.getElementById('contactPaymentFields');
-        const neftPaymentFields = document.getElementById('neftPaymentFields');
-        const paymentForm = document.getElementById('paymentForm');
-        const customerIdInput = document.getElementById('customerId');
+        // Get the customer ID from local storage
+        const customerId = localStorage.getItem('customerId');
 
-        // Function to generate a random customer ID
-        function generateCustomerId() {
-            return 'CUST-' + Math.random().toString(36).substr(2, 9).toUpperCase();
-        }
+        // Function to fetch and display transactions
+        function fetchTransactions() {
+            const transactionList = document.getElementById('transactionList');
 
-        // Check if customer ID exists in local storage, if not, generate a new one
-        let customerId = localStorage.getItem('customerId');
-        if (!customerId) {
-            customerId = generateCustomerId();
-            localStorage.setItem('customerId', customerId);
-        }
-
-        // Set the customer ID in the input field and make it read-only
-        customerIdInput.value = customerId;
-        customerIdInput.readOnly = true;
-
-        paymentMethodSelect.addEventListener('change', function () {
-            const selectedMethod = this.value;
-            cardPaymentFields.style.display = selectedMethod === 'card' ? 'block' : 'none';
-            contactPaymentFields.style.display = selectedMethod === 'contact' ? 'block' : 'none';
-            neftPaymentFields.style.display = selectedMethod === 'neft' ? 'block' : 'none';
-        });
-
-        // Function to generate a transaction ID
-        function generateTransactionId() {
-            return 'TXN-' + Math.random().toString(36).substr(2, 9).toUpperCase();
-        }
-
-        // Payment form submit event listener
-        // Payment form submit event listener
-        paymentForm.addEventListener('submit', async function (e) {
-            e.preventDefault();
-
-            // Fetch location first
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(async function (position) {
-                    const latitude = position.coords.latitude;
-                    const longitude = position.coords.longitude;
-
-                    const customerId = document.getElementById('customerId').value;
-                    const receiverId = document.getElementById('receiverId').value;
-                    const amount = parseFloat(document.getElementById('amount').value);
-                    const transactionId = generateTransactionId();
-
-                    // Query Firestore to check if the receiver is flagged in any transaction
-                    try {
-                        const flaggedQuery = await db.collection('payments')
-                            .where('receiverId', '==', receiverId)
-                            .where('flag', '==', true)
-                            .get();
-
-                        if (!flaggedQuery.empty) {
-                            // If any flagged transactions exist for the receiver, block the payment
-                            alert('This receiver is flagged for fraud or AML. Transaction cannot proceed.');
-                            return; // Stop the transaction
-                        } else {
-                            // Proceed with the transaction if the receiver is not flagged
-                            console.log('Receiver is not flagged. Proceeding with transaction...');
-                        }
-                    } catch (error) {
-                        console.error('Error checking flagged transactions:', error);
-                        alert('An error occurred while checking the receiver status. Please try again.');
-                        return;
-                    }
-
-                    // Fetch customer document from Firestore
-                    const userDocRef = db.collection('users').doc(customerId);
-                    const userDoc = await userDocRef.get();
-
-                    let userData = {};
-                    if (userDoc.exists) {
-                        userData = userDoc.data();
-                    } else {
-                        // Create new user document if it doesn't exist
-                        await userDocRef.set({
-                            blocked: false,
-                            highAmountTransferCount: 0,
-                            lastLargeTransactionTimestamp: null
-                        });
-                        userData = {
-                            blocked: false,
-                            highAmountTransferCount: 0,
-                            lastLargeTransactionTimestamp: null
-                        };
-                    }
-
-                    if (userData.blocked) {
-                        alert('Your account is currently blocked due to high-value transactions.');
-                        return;
-                    }
-
-                    // Check if the amount is above ₹40,000 and within 10 minutes
-                    const now = new Date();
-                    const TEN_MINUTES_IN_MS = 10 * 60 * 1000;
-
-                    if (amount > 40000) {
-                        const lastTransactionTimestamp = userData.lastLargeTransactionTimestamp
-                            ? userData.lastLargeTransactionTimestamp.toDate() : null;
-
-                        if (lastTransactionTimestamp && now - lastTransactionTimestamp < TEN_MINUTES_IN_MS) {
-                            userData.highAmountTransferCount += 1;
-                        } else {
-                            userData.highAmountTransferCount = 1; // Reset count if outside 10 minutes window
-                        }
-
-                        userData.lastLargeTransactionTimestamp = firebase.firestore.Timestamp.fromDate(now);
-
-                        if (userData.highAmountTransferCount >= 3) {
-                            await userDocRef.update({
-                                blocked: true,
-                                highAmountTransferCount: userData.highAmountTransferCount,
-                                lastLargeTransactionTimestamp: userData.lastLargeTransactionTimestamp
-                            });
-                            alert('You have been blocked due to high-value transactions in a short period.');
-                            return;
-                        }
-
-                        await userDocRef.update({
-                            highAmountTransferCount: userData.highAmountTransferCount,
-                            lastLargeTransactionTimestamp: userData.lastLargeTransactionTimestamp
-                        });
-                    }
-
-                    const paymentMethod = paymentMethodSelect.value;
-                    let paymentData = {
-                        transactionId: transactionId,
-                        type: paymentMethod === 'card' ? 'Card Payment' : paymentMethod === 'contact' ? 'Contact Payment' : 'NEFT',
-                        customerId,
-                        receiverId,
-                        amount,
-                        originCountry: document.getElementById('originCountry').value,
-                        destinationCountry: document.getElementById('destinationCountry').value,
-                        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                        location: {
-                            latitude: latitude,
-                            longitude: longitude
-                        }
-                    };
-
-                    if (paymentMethod === 'card') {
-                        paymentData.cardNumber = document.getElementById('cardNumber').value;
-                        paymentData.expiryDate = document.getElementById('expiryDate').value;
-                        paymentData.cvv = document.getElementById('cvv').value;
-                    } else if (paymentMethod === 'contact') {
-                        paymentData.contactNumber = document.getElementById('contactNumber').value;
-                    } else if (paymentMethod === 'neft') {
-                        paymentData.accountNumber = document.getElementById('accountNumber').value;
-                        paymentData.ifscCode = document.getElementById('ifscCode').value;
-                    }
-
-                    try {
-                        await processPayment();
-                        // Payment successful, store in Firestore
-                        await db.collection("payments").doc(transactionId).set(paymentData);
-                        console.log("Payment document written with ID: ", transactionId);
-                        alert("Payment processed and stored successfully!\nTransaction ID: " + transactionId);
-                        paymentForm.reset();
-                        customerIdInput.value = customerId; // Reset the customer ID field
-                    } catch (error) {
-                        console.error("Error processing payment: ", error);
-                        alert('Error processing payment. The transaction was not stored. Please try again.');
-                    }
-                }, function (error) {
-                    console.error("Error getting location: ", error);
-                    alert("Unable to fetch location. Please try again.");
-                });
-            } else {
-                alert("Geolocation is not supported by this browser.");
+            if (!customerId) {
+                transactionList.innerHTML = '<tr><td colspan="7">No customer ID found. Please log in again.</td></tr>';
+                return;
             }
-        });
 
-        async function processPayment() {
-            // This function should handle actual payment processing logic.
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    resolve();
-                }, 1000);
-            });
+            db.collection("payments")
+                .where("customerId", "==", customerId)
+                .orderBy("timestamp", "desc")
+                .get()
+                .then((querySnapshot) => {
+                    transactionList.innerHTML = ''; // Clear existing transactions
+                    if (querySnapshot.empty) {
+                        transactionList.innerHTML = '<tr><td colspan="7">No transactions found for this customer.</td></tr>';
+                    } else {
+                        querySnapshot.forEach((doc) => {
+                            const transaction = doc.data();
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td class="transaction-id">${transaction.transactionId || 'N/A'}</td>
+                                <td>${transaction.type || 'N/A'}</td>
+                                <td>${transaction.timestamp ? new Date(transaction.timestamp.seconds * 1000).toLocaleString() : 'N/A'}</td>
+                                <td>${transaction.receiverId || 'N/A'}</td>
+                                <td>${transaction.originCountry || 'N/A'}</td>
+                                <td>${transaction.destinationCountry || 'N/A'}</td>
+                                <td class="transaction-amount">₹${transaction.amount || '0'}</td>
+                            `;
+                            transactionList.appendChild(row);
+                        });
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error fetching transactions: ", error);
+                    transactionList.innerHTML = '<tr><td colspan="7">Error fetching transactions. Please try again later.</td></tr>';
+                });
         }
+
+        // Fetch transactions when the page loads
+        fetchTransactions();
     </script>
 </body>
 
