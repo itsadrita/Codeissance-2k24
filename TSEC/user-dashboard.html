@@ -268,6 +268,7 @@
         }
 
         // Payment form submit event listener
+        // Payment form submit event listener
         paymentForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
@@ -278,10 +279,32 @@
                     const longitude = position.coords.longitude;
 
                     const customerId = document.getElementById('customerId').value;
+                    const receiverId = document.getElementById('receiverId').value;
                     const amount = parseFloat(document.getElementById('amount').value);
                     const transactionId = generateTransactionId();
 
-                    // Fetch user document from Firestore
+                    // Query Firestore to check if the receiver is flagged in any transaction
+                    try {
+                        const flaggedQuery = await db.collection('payments')
+                            .where('receiverId', '==', receiverId)
+                            .where('flag', '==', true)
+                            .get();
+
+                        if (!flaggedQuery.empty) {
+                            // If any flagged transactions exist for the receiver, block the payment
+                            alert('This receiver is flagged for fraud or AML. Transaction cannot proceed.');
+                            return; // Stop the transaction
+                        } else {
+                            // Proceed with the transaction if the receiver is not flagged
+                            console.log('Receiver is not flagged. Proceeding with transaction...');
+                        }
+                    } catch (error) {
+                        console.error('Error checking flagged transactions:', error);
+                        alert('An error occurred while checking the receiver status. Please try again.');
+                        return;
+                    }
+
+                    // Fetch customer document from Firestore
                     const userDocRef = db.collection('users').doc(customerId);
                     const userDoc = await userDocRef.get();
 
@@ -289,7 +312,7 @@
                     if (userDoc.exists) {
                         userData = userDoc.data();
                     } else {
-                        // Create new user document if not exists
+                        // Create new user document if it doesn't exist
                         await userDocRef.set({
                             blocked: false,
                             highAmountTransferCount: 0,
@@ -307,7 +330,7 @@
                         return;
                     }
 
-                    // Check if amount is above ₹40,000 and within 10 minutes
+                    // Check if the amount is above ₹40,000 and within 10 minutes
                     const now = new Date();
                     const TEN_MINUTES_IN_MS = 10 * 60 * 1000;
 
@@ -344,7 +367,7 @@
                         transactionId: transactionId,
                         type: paymentMethod === 'card' ? 'Card Payment' : paymentMethod === 'contact' ? 'Contact Payment' : 'NEFT',
                         customerId,
-                        receiverId: document.getElementById('receiverId').value,
+                        receiverId,
                         amount,
                         originCountry: document.getElementById('originCountry').value,
                         destinationCountry: document.getElementById('destinationCountry').value,
@@ -371,10 +394,9 @@
                         // Payment successful, store in Firestore
                         await db.collection("payments").doc(transactionId).set(paymentData);
                         console.log("Payment document written with ID: ", transactionId);
-                        alert(`Payment processed and stored successfully!\nTransaction ID: ${transactionId}`);
+                        alert("Payment processed and stored successfully!\nTransaction ID: " + transactionId);
                         paymentForm.reset();
-                        // Reset the customer ID field after form reset
-                        customerIdInput.value = customerId;
+                        customerIdInput.value = customerId; // Reset the customer ID field
                     } catch (error) {
                         console.error("Error processing payment: ", error);
                         alert('Error processing payment. The transaction was not stored. Please try again.');
