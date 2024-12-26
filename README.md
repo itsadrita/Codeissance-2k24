@@ -3,26 +3,70 @@
 ## Overview
 The AI-Powered Anti-Money Laundering (AML) system is designed to detect and prevent suspicious financial activities by classifying transactions and alerting the necessary stakeholders. Using AI and machine learning models, the system identifies patterns, flags risky transactions, and enables administrators to take action. The system also generates reports for law enforcement, helping banks stay compliant with AML regulations.
 
+
 ## Key Features
 
-1. **Automated Transaction Monitoring & Classification**:
-   - Classifies transactions into **Low Risk**, **Medium Risk**, and **High Risk** based on historical data and patterns.
-   - Detects anomalies and flags suspicious activities for review.
+### Classification Based on Risk
+- **Automatic Detection**: Identifies circular transaction patterns (e.g., A → B → C → A).
+- **Risk Classification**:
+  - Classifies flagged transactions into **Low Risk**, **Medium Risk**, and **High Risk** based on:
+    - Transaction frequency
+    - Amount thresholds
+    - Detected patterns
+- **Risk Scoring**:
+  - Uses historical data and graph-based features (e.g., centrality metrics) to inform scoring.
 
-2. **Dynamic Account Blocking**:
-   - Automatically blocks customer accounts after two transactions over 50,000, requiring them to contact the bank for resolution.
+### Anomaly Detection
+- Detects unusual or repetitive cycles within a transaction network.
+- Flags suspicious accounts for further investigation.
 
-3. **Admin Dashboard for Manual Review**:
-   - Admins can manually review and flag transactions, blocking accounts when necessary.
-   - Flagged accounts cannot receive money until further review by the bank.
+---
 
-4. **Report Generation for Law Enforcement**:
-   - Generates daily/weekly reports of suspicious transactions and customer behavior.
-   - Includes geographic information such as **longitude** and **latitude** of flagged transactions.
+## Dynamic Circular Pattern Blocking
 
-5. **Real-time Risk Dashboard & Alerts**:
-   - Real-time analytics for daily transactions, risk detection, and flagged accounts.
-   - Alerts admins when high-risk thresholds are met.
+### Threshold-Based Blocking
+- Automatically freezes accounts involved in circular transactions exceeding a defined total value (e.g., two cycles totaling ₹50,000 or more).
+- Blocked accounts must contact the bank for manual review and resolution.
+
+---
+
+## Admin Dashboard for Circular Transactions
+
+### Manual Review Capabilities
+- Admins can view flagged circular transactions with detailed insights, including:
+  - Accounts involved
+  - Total transaction amounts
+  - Frequency of transactions in cycles
+- Admins can manually block accounts if necessary.
+
+### Blocked Account Restrictions
+- Flagged accounts are restricted from receiving money until reviewed and cleared by the bank.
+
+---
+
+## Circular Transaction Report Generation for Law Enforcement
+
+### Daily and Weekly Reports
+- Generates reports of all flagged circular transactions for law enforcement purposes.
+- **Report Contents**:
+  - Details of flagged accounts
+  - Total amounts cycled
+  - Risk classifications
+- Includes **geographic metadata** (longitude and latitude) of flagged transactions for further investigation.
+
+---
+
+## Real-Time Circular Risk Dashboard & Alerts
+
+### Analytics Overview
+- Provides a real-time dashboard to monitor:
+  - Daily transaction volumes
+  - Flagged cycles
+  - Risk classifications
+- Interactive visualizations of transaction networks.
+
+### Alert System
+- Sends alerts to admins when high-risk circular patterns are detected, enabling prompt action.
 
 
 ## Installation
